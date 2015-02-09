@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40153C281A8926270044178D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C271A8926270044178D /* main.m */; };
+		40153C2B1A8926270044178D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C2A1A8926270044178D /* AppDelegate.m */; };
+		40153C2E1A8926270044178D /* Hoteled.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40153C2C1A8926270044178D /* Hoteled.xcdatamodeld */; };
+		40153C311A8926270044178D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C301A8926270044178D /* ViewController.m */; };
+		40153C341A8926270044178D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40153C321A8926270044178D /* Main.storyboard */; };
+		40153C361A8926270044178D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40153C351A8926270044178D /* Images.xcassets */; };
+		40153C391A8926270044178D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40153C371A8926270044178D /* LaunchScreen.xib */; };
+		40153C451A8926280044178D /* HoteledTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C441A8926280044178D /* HoteledTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40153C3F1A8926280044178D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40153C1A1A8926270044178D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40153C211A8926270044178D;
+			remoteInfo = Hoteled;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		40153C221A8926270044178D /* Hoteled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoteled.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40153C261A8926270044178D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40153C271A8926270044178D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		40153C291A8926270044178D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		40153C2A1A8926270044178D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		40153C2D1A8926270044178D /* Hoteled.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hoteled.xcdatamodel; sourceTree = "<group>"; };
+		40153C2F1A8926270044178D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		40153C301A8926270044178D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		40153C331A8926270044178D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		40153C351A8926270044178D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		40153C381A8926270044178D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		40153C3E1A8926280044178D /* HoteledTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoteledTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40153C431A8926280044178D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40153C441A8926280044178D /* HoteledTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoteledTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40153C1F1A8926270044178D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40153C3B1A8926280044178D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40153C191A8926270044178D = {
+			isa = PBXGroup;
+			children = (
+				40153C241A8926270044178D /* Hoteled */,
+				40153C411A8926280044178D /* HoteledTests */,
+				40153C231A8926270044178D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40153C231A8926270044178D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40153C221A8926270044178D /* Hoteled.app */,
+				40153C3E1A8926280044178D /* HoteledTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40153C241A8926270044178D /* Hoteled */ = {
+			isa = PBXGroup;
+			children = (
+				40153C291A8926270044178D /* AppDelegate.h */,
+				40153C2A1A8926270044178D /* AppDelegate.m */,
+				40153C2F1A8926270044178D /* ViewController.h */,
+				40153C301A8926270044178D /* ViewController.m */,
+				40153C321A8926270044178D /* Main.storyboard */,
+				40153C351A8926270044178D /* Images.xcassets */,
+				40153C371A8926270044178D /* LaunchScreen.xib */,
+				40153C2C1A8926270044178D /* Hoteled.xcdatamodeld */,
+				40153C251A8926270044178D /* Supporting Files */,
+			);
+			path = Hoteled;
+			sourceTree = "<group>";
+		};
+		40153C251A8926270044178D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40153C261A8926270044178D /* Info.plist */,
+				40153C271A8926270044178D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40153C411A8926280044178D /* HoteledTests */ = {
+			isa = PBXGroup;
+			children = (
+				40153C441A8926280044178D /* HoteledTests.m */,
+				40153C421A8926280044178D /* Supporting Files */,
+			);
+			path = HoteledTests;
+			sourceTree = "<group>";
+		};
+		40153C421A8926280044178D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40153C431A8926280044178D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40153C211A8926270044178D /* Hoteled */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40153C481A8926280044178D /* Build configuration list for PBXNativeTarget "Hoteled" */;
+			buildPhases = (
+				40153C1E1A8926270044178D /* Sources */,
+				40153C1F1A8926270044178D /* Frameworks */,
+				40153C201A8926270044178D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hoteled;
+			productName = Hoteled;
+			productReference = 40153C221A8926270044178D /* Hoteled.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40153C3D1A8926280044178D /* HoteledTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40153C4B1A8926280044178D /* Build configuration list for PBXNativeTarget "HoteledTests" */;
+			buildPhases = (
+				40153C3A1A8926280044178D /* Sources */,
+				40153C3B1A8926280044178D /* Frameworks */,
+				40153C3C1A8926280044178D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40153C401A8926280044178D /* PBXTargetDependency */,
+			);
+			name = HoteledTests;
+			productName = HoteledTests;
+			productReference = 40153C3E1A8926280044178D /* HoteledTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40153C1A1A8926270044178D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Eric Mentele";
+				TargetAttributes = {
+					40153C211A8926270044178D = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					40153C3D1A8926280044178D = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 40153C211A8926270044178D;
+					};
+				};
+			};
+			buildConfigurationList = 40153C1D1A8926270044178D /* Build configuration list for PBXProject "Hoteled" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 40153C191A8926270044178D;
+			productRefGroup = 40153C231A8926270044178D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40153C211A8926270044178D /* Hoteled */,
+				40153C3D1A8926280044178D /* HoteledTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40153C201A8926270044178D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40153C341A8926270044178D /* Main.storyboard in Resources */,
+				40153C391A8926270044178D /* LaunchScreen.xib in Resources */,
+				40153C361A8926270044178D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40153C3C1A8926280044178D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40153C1E1A8926270044178D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40153C2B1A8926270044178D /* AppDelegate.m in Sources */,
+				40153C2E1A8926270044178D /* Hoteled.xcdatamodeld in Sources */,
+				40153C311A8926270044178D /* ViewController.m in Sources */,
+				40153C281A8926270044178D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40153C3A1A8926280044178D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40153C451A8926280044178D /* HoteledTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40153C401A8926280044178D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40153C211A8926270044178D /* Hoteled */;
+			targetProxy = 40153C3F1A8926280044178D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40153C321A8926270044178D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40153C331A8926270044178D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		40153C371A8926270044178D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40153C381A8926270044178D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40153C461A8926280044178D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40153C471A8926280044178D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40153C491A8926280044178D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hoteled/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		40153C4A1A8926280044178D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hoteled/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		40153C4C1A8926280044178D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HoteledTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoteled.app/Hoteled";
+			};
+			name = Debug;
+		};
+		40153C4D1A8926280044178D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HoteledTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoteled.app/Hoteled";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40153C1D1A8926270044178D /* Build configuration list for PBXProject "Hoteled" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40153C461A8926280044178D /* Debug */,
+				40153C471A8926280044178D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40153C481A8926280044178D /* Build configuration list for PBXNativeTarget "Hoteled" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40153C491A8926280044178D /* Debug */,
+				40153C4A1A8926280044178D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		40153C4B1A8926280044178D /* Build configuration list for PBXNativeTarget "HoteledTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40153C4C1A8926280044178D /* Debug */,
+				40153C4D1A8926280044178D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		40153C2C1A8926270044178D /* Hoteled.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				40153C2D1A8926270044178D /* Hoteled.xcdatamodel */,
+			);
+			currentVersion = 40153C2D1A8926270044178D /* Hoteled.xcdatamodel */;
+			path = Hoteled.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 40153C1A1A8926270044178D /* Project object */;
+}
