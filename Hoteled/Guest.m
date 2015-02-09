@@ -1,15 +1,18 @@
 //
-//  ViewController.h
+//  Guest.m
 //  Hoteled
 //
 //  Created by Eric Mentele on 2/9/15.
 //  Copyright (c) 2015 Eric Mentele. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Guest.h"
 
-@interface ViewController : UIViewController
 
+@implementation Guest
+
+@dynamic firstName;
+@dynamic lastName;
+@dynamic reservation;
 
 @end
-

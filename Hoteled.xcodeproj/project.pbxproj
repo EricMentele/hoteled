@@ -10,11 +10,17 @@
 		40153C281A8926270044178D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C271A8926270044178D /* main.m */; };
 		40153C2B1A8926270044178D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C2A1A8926270044178D /* AppDelegate.m */; };
 		40153C2E1A8926270044178D /* Hoteled.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40153C2C1A8926270044178D /* Hoteled.xcdatamodeld */; };
-		40153C311A8926270044178D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C301A8926270044178D /* ViewController.m */; };
 		40153C341A8926270044178D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40153C321A8926270044178D /* Main.storyboard */; };
 		40153C361A8926270044178D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40153C351A8926270044178D /* Images.xcassets */; };
 		40153C391A8926270044178D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40153C371A8926270044178D /* LaunchScreen.xib */; };
 		40153C451A8926280044178D /* HoteledTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C441A8926280044178D /* HoteledTests.m */; };
+		40153C561A8931F30044178D /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C551A8931F30044178D /* Guest.m */; };
+		40153C591A8931F30044178D /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C581A8931F30044178D /* Reservation.m */; };
+		40153C5C1A8931F30044178D /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C5B1A8931F30044178D /* Hotel.m */; };
+		40153C5F1A8939210044178D /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C5E1A8939210044178D /* Room.m */; };
+		40153C621A8940410044178D /* HotelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C611A8940410044178D /* HotelListViewController.m */; };
+		40153C641A8951B00044178D /* to-do in Resources */ = {isa = PBXBuildFile; fileRef = 40153C631A8951B00044178D /* to-do */; };
+		40153C661A8951E00044178D /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 40153C651A8951E00044178D /* seed.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +40,24 @@
 		40153C291A8926270044178D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		40153C2A1A8926270044178D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		40153C2D1A8926270044178D /* Hoteled.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hoteled.xcdatamodel; sourceTree = "<group>"; };
-		40153C2F1A8926270044178D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		40153C301A8926270044178D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		40153C331A8926270044178D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40153C351A8926270044178D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40153C381A8926270044178D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		40153C3E1A8926280044178D /* HoteledTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoteledTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40153C431A8926280044178D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40153C441A8926280044178D /* HoteledTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoteledTests.m; sourceTree = "<group>"; };
+		40153C541A8931F30044178D /* Guest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guest.h; sourceTree = "<group>"; };
+		40153C551A8931F30044178D /* Guest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guest.m; sourceTree = "<group>"; };
+		40153C571A8931F30044178D /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
+		40153C581A8931F30044178D /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
+		40153C5A1A8931F30044178D /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
+		40153C5B1A8931F30044178D /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
+		40153C5D1A8939210044178D /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Room.h; path = ../Room.h; sourceTree = "<group>"; };
+		40153C5E1A8939210044178D /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room.m; path = ../Room.m; sourceTree = "<group>"; };
+		40153C601A8940410044178D /* HotelListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelListViewController.h; sourceTree = "<group>"; };
+		40153C611A8940410044178D /* HotelListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelListViewController.m; sourceTree = "<group>"; };
+		40153C631A8951B00044178D /* to-do */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "to-do"; sourceTree = "<group>"; };
+		40153C651A8951E00044178D /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,15 +99,11 @@
 		40153C241A8926270044178D /* Hoteled */ = {
 			isa = PBXGroup;
 			children = (
-				40153C291A8926270044178D /* AppDelegate.h */,
-				40153C2A1A8926270044178D /* AppDelegate.m */,
-				40153C2F1A8926270044178D /* ViewController.h */,
-				40153C301A8926270044178D /* ViewController.m */,
-				40153C321A8926270044178D /* Main.storyboard */,
-				40153C351A8926270044178D /* Images.xcassets */,
-				40153C371A8926270044178D /* LaunchScreen.xib */,
-				40153C2C1A8926270044178D /* Hoteled.xcdatamodeld */,
+				40153C501A8926F00044178D /* Views */,
+				40153C4F1A8926EE0044178D /* Controllers */,
+				40153C4E1A8926E90044178D /* Models */,
 				40153C251A8926270044178D /* Supporting Files */,
+				40153C631A8951B00044178D /* to-do */,
 			);
 			path = Hoteled;
 			sourceTree = "<group>";
@@ -120,6 +132,44 @@
 				40153C431A8926280044178D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40153C4E1A8926E90044178D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40153C2C1A8926270044178D /* Hoteled.xcdatamodeld */,
+				40153C5A1A8931F30044178D /* Hotel.h */,
+				40153C5B1A8931F30044178D /* Hotel.m */,
+				40153C571A8931F30044178D /* Reservation.h */,
+				40153C581A8931F30044178D /* Reservation.m */,
+				40153C541A8931F30044178D /* Guest.h */,
+				40153C551A8931F30044178D /* Guest.m */,
+				40153C5D1A8939210044178D /* Room.h */,
+				40153C5E1A8939210044178D /* Room.m */,
+				40153C651A8951E00044178D /* seed.json */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		40153C4F1A8926EE0044178D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				40153C291A8926270044178D /* AppDelegate.h */,
+				40153C2A1A8926270044178D /* AppDelegate.m */,
+				40153C601A8940410044178D /* HotelListViewController.h */,
+				40153C611A8940410044178D /* HotelListViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		40153C501A8926F00044178D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40153C321A8926270044178D /* Main.storyboard */,
+				40153C351A8926270044178D /* Images.xcassets */,
+				40153C371A8926270044178D /* LaunchScreen.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +252,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40153C661A8951E00044178D /* seed.json in Resources */,
+				40153C641A8951B00044178D /* to-do in Resources */,
 				40153C341A8926270044178D /* Main.storyboard in Resources */,
 				40153C391A8926270044178D /* LaunchScreen.xib in Resources */,
 				40153C361A8926270044178D /* Images.xcassets in Resources */,
@@ -222,10 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40153C591A8931F30044178D /* Reservation.m in Sources */,
+				40153C561A8931F30044178D /* Guest.m in Sources */,
 				40153C2B1A8926270044178D /* AppDelegate.m in Sources */,
 				40153C2E1A8926270044178D /* Hoteled.xcdatamodeld in Sources */,
-				40153C311A8926270044178D /* ViewController.m in Sources */,
+				40153C5C1A8931F30044178D /* Hotel.m in Sources */,
+				40153C5F1A8939210044178D /* Room.m in Sources */,
 				40153C281A8926270044178D /* main.m in Sources */,
+				40153C621A8940410044178D /* HotelListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
