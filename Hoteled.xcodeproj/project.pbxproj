@@ -21,6 +21,7 @@
 		40153C621A8940410044178D /* HotelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C611A8940410044178D /* HotelListViewController.m */; };
 		40153C641A8951B00044178D /* to-do in Resources */ = {isa = PBXBuildFile; fileRef = 40153C631A8951B00044178D /* to-do */; };
 		40153C661A8951E00044178D /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 40153C651A8951E00044178D /* seed.json */; };
+		40153C6C1A897B670044178D /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40153C6B1A897B670044178D /* RoomsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		40153C611A8940410044178D /* HotelListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelListViewController.m; sourceTree = "<group>"; };
 		40153C631A8951B00044178D /* to-do */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "to-do"; sourceTree = "<group>"; };
 		40153C651A8951E00044178D /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
+		40153C6A1A897B670044178D /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
+		40153C6B1A897B670044178D /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 				40153C2A1A8926270044178D /* AppDelegate.m */,
 				40153C601A8940410044178D /* HotelListViewController.h */,
 				40153C611A8940410044178D /* HotelListViewController.m */,
+				40153C6A1A897B670044178D /* RoomsViewController.h */,
+				40153C6B1A897B670044178D /* RoomsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				40153C5F1A8939210044178D /* Room.m in Sources */,
 				40153C281A8926270044178D /* main.m in Sources */,
 				40153C621A8940410044178D /* HotelListViewController.m in Sources */,
+				40153C6C1A897B670044178D /* RoomsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,9 +409,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
 				INFOPLIST_FILE = Hoteled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
 		};
@@ -413,9 +421,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
 				INFOPLIST_FILE = Hoteled/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
 		};
