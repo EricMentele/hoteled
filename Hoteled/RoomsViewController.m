@@ -7,10 +7,12 @@
 //
 
 #import "RoomsViewController.h"
+#import "Room.h"
 
 @interface RoomsViewController () <UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *roomsTable;
+@property (strong,nonatomic) NSArray *selectedRooms;
 
 @end
 
@@ -18,19 +20,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  self.selectedRooms = self.passedHotel.rooms.allObjects;
   self.roomsTable.dataSource = self;
-    // Do any additional setup after loading the view.
+  //allObjects converts to an array.
   
+    // Do any additional setup after loading the view.
+
 }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
-  return self.hotel.rooms.count;
+  return self.selectedRooms.count;
+  //NSLog(@"%@",self.hotel.rooms.count);
 }
 
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"roomsCell" forIndexPath:indexPath];
+  Room *room = self.selectedRooms[indexPath.row];
+  //%@ is wildcard
+  NSString *number = [NSString stringWithFormat:@"%@", room.number];
+  cell.textLabel.text = number;
+  return cell;
+}
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  if ([segue.identifier isEqualToString:@""]) {
+    
+    
+  }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

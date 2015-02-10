@@ -36,6 +36,7 @@
   if (!fetchError) {
     self.hotels = results;
     [self.hotelTable reloadData];
+    
   }
   
 }
@@ -67,9 +68,9 @@
   if ([segue.identifier isEqualToString:@"roomsVC"]) {
     
     RoomsViewController *roomsVC = (RoomsViewController *)segue.destinationViewController;
-    
-    Hotel *hotelToPass = self.hotel;
-    roomsVC.hotel = hotelToPass;
+    NSIndexPath *indexPath = self.hotelTable.indexPathForSelectedRow;
+    //Hotel *hotelToPass = self.hotel;
+    roomsVC.passedHotel = self.hotels[indexPath.row];
     
   }
 }
