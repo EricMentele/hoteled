@@ -198,9 +198,6 @@
                                 <date key="date" timeIntervalSinceReferenceDate="445283057.95751101">
                                     <!--2015-02-10 17:44:17 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="bookButton:" destination="RFT-sg-crD" eventType="valueChanged" id="3fs-ZB-eF7"/>
-                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrive:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZL-pU-2vM">
                                 <rect key="frame" x="38" y="207" width="49" height="21"/>
@@ -222,9 +219,6 @@
                                 <date key="date" timeIntervalSinceReferenceDate="445283057.95751101">
                                     <!--2015-02-10 17:44:17 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="bookButton:" destination="RFT-sg-crD" eventType="valueChanged" id="A8p-F6-JbR"/>
-                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,7 +239,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="startDate" destination="UOg-NU-Uea" id="eRt-TF-ucf"/>
+                        <outlet property="endDate" destination="dxy-9x-lo1" id="JGJ-14-57I"/>
+                        <outlet property="startDate" destination="UOg-NU-Uea" id="QEE-57-v3v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ary-Bi-z96" userLabel="First Responder" sceneMemberID="firstResponder"/>

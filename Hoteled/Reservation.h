@@ -13,8 +13,8 @@
 
 @interface Reservation : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * startDate;
-@property (nonatomic, retain) NSNumber * endDate;
+@property (nonatomic, retain) NSDate * startDate;
+@property (nonatomic, retain) NSDate * endDate;
 @property (nonatomic, retain) Room *room;
 @property (nonatomic, retain) Guest *guest;
 
