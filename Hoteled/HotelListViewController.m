@@ -9,10 +9,12 @@
 #import "HotelListViewController.h"
 #import "AppDelegate.h"
 #import "Hotel.h"
+#import "RoomsViewController.h"
 
 @interface HotelListViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *hotelTable;
 @property (strong, nonatomic) NSArray *hotels;
+@property (strong, nonatomic) Hotel *hotel;
 
 @end
 
@@ -34,6 +36,7 @@
   if (!fetchError) {
     self.hotels = results;
     [self.hotelTable reloadData];
+    
   }
   
 }
@@ -54,8 +57,22 @@
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotelCell" forIndexPath:indexPath];
   Hotel *hotel = self.hotels[indexPath.row];
+  self.hotel = hotel;
   cell.textLabel.text = hotel.name;
   return cell;
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  if ([segue.identifier isEqualToString:@"roomsVC"]) {
+    
+    RoomsViewController *roomsVC = (RoomsViewController *)segue.destinationViewController;
+    NSIndexPath *indexPath = self.hotelTable.indexPathForSelectedRow;
+    //Hotel *hotelToPass = self.hotel;
+    roomsVC.passedHotel = self.hotels[indexPath.row];
+    
+  }
 }
 /*
 #pragma mark - Navigation

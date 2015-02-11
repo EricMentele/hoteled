@@ -53,7 +53,7 @@
         hotel.rating = hotelDictionary[@"stars"];
         hotel.location = hotelDictionary[@"location"];
         
-        NSArray *roomsArray = hotelDictionary[@"@rooms"];
+        NSArray *roomsArray = hotelDictionary[@"rooms"];
         for (NSDictionary *roomDictionary in roomsArray) {
           Room *room = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
           room.number = roomDictionary[@"number"];

@@ -24,6 +24,7 @@
         <relationship name="hotel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hotel" inverseName="rooms" inverseEntity="Hotel" syncable="YES"/>
         <relationship name="reservations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reservation" inverseName="room" inverseEntity="Reservation" syncable="YES"/>
     </entity>
+    <fetchRequest name="HotelFetch" entity="Hotel" predicateString="name CONTAINS &quot;&quot;"/>
     <elements>
         <element name="Hotel" positionX="-227" positionY="-160" width="128" height="103"/>
         <element name="Room" positionX="-72" positionY="-103" width="128" height="118"/>
