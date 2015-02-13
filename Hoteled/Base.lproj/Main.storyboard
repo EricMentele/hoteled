@@ -147,7 +147,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="RFT-sg-crD" kind="show" identifier="roomRes" id="r4p-Nc-pyk"/>
+                                            <segue destination="RFT-sg-crD" kind="show" identifier="reservationsVC" id="r4p-Nc-pyk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -265,10 +265,10 @@
             </objects>
             <point key="canvasLocation" x="645" y="325"/>
         </scene>
-        <!--View Controller-->
+        <!--Availability View Controller-->
         <scene sceneID="g5I-xd-eC3">
             <objects>
-                <viewController id="aAL-5A-Wa5" sceneMemberID="viewController">
+                <viewController id="aAL-5A-Wa5" customClass="AvailabilityViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VKG-0k-D8Z"/>
                         <viewControllerLayoutGuide type="bottom" id="IZm-wW-ne9"/>
@@ -285,9 +285,6 @@
                                 <date key="date" timeIntervalSinceReferenceDate="445283057.95751101">
                                     <!--2015-02-10 17:44:17 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="bookButton:" destination="RFT-sg-crD" eventType="valueChanged" id="MB6-QY-SKm"/>
-                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCP-4d-Jw7">
                                 <rect key="frame" x="277" y="564" width="46" height="36"/>
@@ -297,6 +294,9 @@
                                 <state key="normal" title="Check">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="checkButton:" destination="aAL-5A-Wa5" eventType="touchUpInside" id="wup-Ng-oYq"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mJ7-vR-W4I">
                                 <rect key="frame" x="95" y="344" width="411" height="216"/>
@@ -306,9 +306,6 @@
                                 <date key="date" timeIntervalSinceReferenceDate="445283057.95751101">
                                     <!--2015-02-10 17:44:17 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="bookButton:" destination="RFT-sg-crD" eventType="valueChanged" id="tLb-Uv-pYJ"/>
-                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrive:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcO-qp-Dgj">
                                 <rect key="frame" x="38" y="217" width="49" height="21"/>
@@ -361,6 +358,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="endDate" destination="mJ7-vR-W4I" id="u25-te-f6h"/>
+                        <outlet property="hotelSelector" destination="x28-Sy-JBb" id="2CH-Dw-OAw"/>
+                        <outlet property="startDate" destination="hVX-rT-VHg" id="f6E-uK-cko"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ij-Pw-wLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

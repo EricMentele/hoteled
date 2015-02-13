@@ -8,6 +8,7 @@
 
 #import "RoomsViewController.h"
 #import "Room.h"
+#import "AddReservationViewController.h"
 
 @interface RoomsViewController () <UITableViewDataSource>
 
@@ -20,19 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+  NSAssert(self.passedHotel != nil, @"Passed hotel is nil");
   self.selectedRooms = self.passedHotel.rooms.allObjects;
   self.roomsTable.dataSource = self;
   //allObjects converts to an array.
-  
-    // Do any additional setup after loading the view.
-
 }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
+  NSLog(@"%lu",(unsigned long)_selectedRooms.count);
   return self.selectedRooms.count;
-  //NSLog(@"%@",self.hotel.rooms.count);
 }
 
 
@@ -48,10 +48,14 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   
-  if ([segue.identifier isEqualToString:@""]) {
-    
-    
-  }
+  
+    if ([segue.identifier isEqualToString:@"reservationsVC"]) {
+      AddReservationViewController *destinationVC = segue.destinationViewController;
+      NSIndexPath *indexPath = self.roomsTable.indexPathForSelectedRow;
+      Room *room = self.selectedRooms[indexPath.row];
+      destinationVC.selectedRoom = room;
+    }
+  
 }
 
 - (void)didReceiveMemoryWarning {

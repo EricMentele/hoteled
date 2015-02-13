@@ -10,11 +10,11 @@
 #import "AppDelegate.h"
 #import "Hotel.h"
 #import "RoomsViewController.h"
+#import "HotelService.h"
 
 @interface HotelListViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *hotelTable;
 @property (strong, nonatomic) NSArray *hotels;
-@property (strong, nonatomic) Hotel *hotel;
 
 @end
 
@@ -24,16 +24,15 @@
     [super viewDidLoad];
   self.hotelTable.dataSource = self;
   
-  AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-  NSManagedObjectContext *context = appDelegate.managedObjectContext;
   
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]
                                   initWithEntityName:@"Hotel"];
   //this is where you would create a pedicate if desired.
   NSError *fetchError;
+  NSArray *results = [[[HotelService sharedService] coreDataStack].managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
+  NSAssert(!fetchError, @"FETCH ERROR!");
+ if (!fetchError) {
   
-  NSArray *results = [context executeFetchRequest:fetchRequest error:&fetchError];
-  if (!fetchError) {
     self.hotels = results;
     [self.hotelTable reloadData];
     
@@ -57,7 +56,6 @@
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotelCell" forIndexPath:indexPath];
   Hotel *hotel = self.hotels[indexPath.row];
-  self.hotel = hotel;
   cell.textLabel.text = hotel.name;
   return cell;
 }
@@ -69,19 +67,12 @@
     
     RoomsViewController *roomsVC = (RoomsViewController *)segue.destinationViewController;
     NSIndexPath *indexPath = self.hotelTable.indexPathForSelectedRow;
-    //Hotel *hotelToPass = self.hotel;
-    roomsVC.passedHotel = self.hotels[indexPath.row];
-    
+    Hotel *hotelToPass = self.hotels[indexPath.row];
+    roomsVC.passedHotel = hotelToPass;
+    NSAssert(hotelToPass != nil, @"Hotel to pass is nil");
   }
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
+
