@@ -7,8 +7,8 @@ XUpon selecting a hotel, segue to a RoomsViewController, which shows all the roo
 
 Tuesday============================================================================
 
-Setup a View controller that allows you to book reservations for the room they select from your RoomsListViewController.
-Create an Availability View Controller, which lets the user query for all rooms that are available in a specific date range, aka they don't have reservations anywhere in that range.
+XSetup a View controller that allows you to book reservations for the room they select from your RoomsListViewController.
+XCreate an Availability View Controller, which lets the user query for all rooms that are available in a specific date range, aka they don't have reservations anywhere in that range.
 
 Wednesday==========================================================================
 

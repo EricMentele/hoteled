@@ -9,6 +9,7 @@
 #import "RoomsViewController.h"
 #import "Room.h"
 #import "AddReservationViewController.h"
+#import "ReservationsListViewController.h"
 
 @interface RoomsViewController () <UITableViewDataSource>
 
@@ -26,6 +27,7 @@
   self.selectedRooms = self.passedHotel.rooms.allObjects;
   self.roomsTable.dataSource = self;
   //allObjects converts to an array.
+  
 }
 
 
@@ -49,8 +51,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   
   
-    if ([segue.identifier isEqualToString:@"reservationsVC"]) {
-      AddReservationViewController *destinationVC = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"reservationsListVC"]) {
+      ReservationsListViewController *destinationVC = segue.destinationViewController;
       NSIndexPath *indexPath = self.roomsTable.indexPathForSelectedRow;
       Room *room = self.selectedRooms[indexPath.row];
       destinationVC.selectedRoom = room;
