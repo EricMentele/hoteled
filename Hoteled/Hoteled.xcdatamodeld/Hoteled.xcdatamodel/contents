@@ -12,8 +12,8 @@
         <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="hotel" inverseEntity="Room" syncable="YES"/>
     </entity>
     <entity name="Reservation" representedClassName="Reservation" syncable="YES">
-        <attribute name="endDate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="startDate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="guest" maxCount="1" deletionRule="Nullify" destinationEntity="Guest" inverseName="reservation" inverseEntity="Guest" syncable="YES"/>
         <relationship name="room" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="reservations" inverseEntity="Room" syncable="YES"/>
     </entity>
@@ -26,9 +26,9 @@
     </entity>
     <fetchRequest name="HotelFetch" entity="Hotel" predicateString="name CONTAINS &quot;&quot;"/>
     <elements>
-        <element name="Hotel" positionX="-227" positionY="-160" width="128" height="103"/>
-        <element name="Room" positionX="-72" positionY="-103" width="128" height="118"/>
-        <element name="Reservation" positionX="72" positionY="-45" width="128" height="103"/>
         <element name="Guest" positionX="216" positionY="54" width="128" height="88"/>
+        <element name="Hotel" positionX="-227" positionY="-160" width="128" height="103"/>
+        <element name="Reservation" positionX="72" positionY="-45" width="128" height="103"/>
+        <element name="Room" positionX="-72" positionY="-103" width="128" height="118"/>
     </elements>
 </model>

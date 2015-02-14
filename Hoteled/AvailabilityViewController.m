@@ -20,12 +20,10 @@
 
 @implementation AvailabilityViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-  //Set up app delegate.
-//  AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-//  self.context = appDelegate.managedObjectContext;
-  //logic: Search through all reservations, what is the date,
+
 }//view did load
 
 
@@ -48,7 +46,7 @@
   for (Reservation *reservation in results) {
     
     [rooms addObject:reservation.room];
-  }
+  }//for to populate reservations
   //Room info
   NSFetchRequest *fetchRoomsInfo = [[NSFetchRequest alloc] initWithEntityName:@"Room"];
   NSPredicate *roomsPredicate = [NSPredicate predicateWithFormat:@"hotel.name MATCHES %@ AND NOT (self IN %@)",selectedHotel, rooms];
@@ -56,26 +54,11 @@
   NSArray *finalResults = [self.context executeFetchRequest:fetchRoomsInfo error:&fetchError];
   if (fetchError) {
     NSLog(@"%@",fetchError.localizedDescription);
-  }
+  }//if error
   
   NSLog(@"results : %lu",(unsigned long)finalResults.count);
   
   
 }//check button
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated. 
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -9,6 +9,7 @@
 #import "AddReservationViewController.h"
 #import "Reservation.h"
 #import "Guest.h"
+#import "HotelService.h"
 
 @interface AddReservationViewController ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDate;
@@ -24,26 +25,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+
 - (IBAction)bookButton:(id)sender {
   
-  Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:self.selectedRoom.managedObjectContext];
-  
-  reservation.startDate = self.startDate.date;
-  reservation.endDate = self.endDate.date;
-  reservation.room = self.selectedRoom;
-  //guest is not optional so set it with a dummy for now.
-  
-  Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:self.selectedRoom.managedObjectContext];
+  Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:[[HotelService sharedService] coreDataStack].managedObjectContext];
   guest.firstName = @"Eric";
   guest.lastName = @"M";
-  reservation.guest = guest;
-  //you have to call save for this to save right now only on scratch pad.
-  NSError *saveError;
-  [self.selectedRoom.managedObjectContext save:&saveError];
   
-  if (saveError) { NSLog(@"SAVE ERROR");
-  }
-  
+  [[HotelService sharedService] bookReservationForGuest:guest ForRoom:self.selectedRoom startDate:self.startDate.date endDate:self.endDate.date];
+  [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -2,7 +2,7 @@
 //  Reservation.m
 //  Hoteled
 //
-//  Created by Eric Mentele on 2/9/15.
+//  Created by Eric Mentele on 2/13/15.
 //  Copyright (c) 2015 Eric Mentele. All rights reserved.
 //
 
@@ -13,9 +13,9 @@
 
 @implementation Reservation
 
-@dynamic startDate;
 @dynamic endDate;
-@dynamic room;
+@dynamic startDate;
 @dynamic guest;
+@dynamic room;
 
 @end
