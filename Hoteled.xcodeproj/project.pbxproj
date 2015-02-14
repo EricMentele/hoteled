@@ -169,8 +169,7 @@
 			children = (
 				40153C291A8926270044178D /* AppDelegate.h */,
 				40153C2A1A8926270044178D /* AppDelegate.m */,
-				40153C701A8A92250044178D /* AvailabilityViewController.h */,
-				40153C711A8A92250044178D /* AvailabilityViewController.m */,
+				40BFDB3B1A8F193B00C21639 /* Reservations */,
 				40BCDF401A8C544000D45591 /* Hotel */,
 			);
 			name = Controllers;
@@ -203,8 +202,6 @@
 			children = (
 				40153C6A1A897B670044178D /* RoomsViewController.h */,
 				40153C6B1A897B670044178D /* RoomsViewController.m */,
-				40153C6D1A8A7ACC0044178D /* AddReservationViewController.h */,
-				40153C6E1A8A7ACC0044178D /* AddReservationViewController.m */,
 			);
 			name = Rooms;
 			sourceTree = "<group>";
@@ -238,6 +235,17 @@
 				40153C651A8951E00044178D /* seed.json */,
 			);
 			name = Guest;
+			sourceTree = "<group>";
+		};
+		40BFDB3B1A8F193B00C21639 /* Reservations */ = {
+			isa = PBXGroup;
+			children = (
+				40153C6D1A8A7ACC0044178D /* AddReservationViewController.h */,
+				40153C6E1A8A7ACC0044178D /* AddReservationViewController.m */,
+				40153C701A8A92250044178D /* AvailabilityViewController.h */,
+				40153C711A8A92250044178D /* AvailabilityViewController.m */,
+			);
+			name = Reservations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

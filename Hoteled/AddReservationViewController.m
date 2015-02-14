@@ -11,9 +11,11 @@
 #import "Guest.h"
 #import "HotelService.h"
 
-@interface AddReservationViewController ()
+@interface AddReservationViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDate;
 @property (weak, nonatomic) IBOutlet UIDatePicker *endDate;
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
 
 @end
 
@@ -24,14 +26,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  self.firstName.delegate = self;
+  self.lastName.delegate = self;
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  
+  [textField resignFirstResponder];
+  return YES;
 }
 
 
 - (IBAction)bookButton:(id)sender {
   
   Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:[[HotelService sharedService] coreDataStack].managedObjectContext];
-  guest.firstName = @"Eric";
-  guest.lastName = @"M";
+  guest.firstName = self.firstName.text;
+  guest.lastName = self.lastName.text;
+  NSLog(@"%@",guest.firstName);
   
   [[HotelService sharedService] bookReservationForGuest:guest ForRoom:self.selectedRoom startDate:self.startDate.date endDate:self.endDate.date];
   [self dismissViewControllerAnimated:true completion:nil];

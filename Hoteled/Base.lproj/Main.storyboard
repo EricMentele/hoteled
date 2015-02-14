@@ -184,7 +184,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clB-Lp-cXh">
                                 <rect key="frame" x="277" y="564" width="46" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="MvY-BH-CZQ"/>
+                                    <constraint firstAttribute="height" constant="36" id="hMh-mv-j66"/>
+                                    <constraint firstAttribute="width" constant="46" id="oSx-yE-tqZ"/>
                                 </constraints>
                                 <state key="normal" title="Book">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,61 +195,81 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dxy-9x-lo1">
-                                <rect key="frame" x="95" y="340" width="411" height="216"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="wMH-V3-49l"/>
-                                </constraints>
+                                <rect key="frame" x="50" y="378" width="500" height="180"/>
                                 <date key="date" timeIntervalSinceReferenceDate="445283057.95751101">
                                     <!--2015-02-10 17:44:17 +0000-->
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrive:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZL-pU-2vM">
-                                <rect key="frame" x="38" y="207" width="49" height="21"/>
+                                <rect key="frame" x="276" y="132" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depart:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgk-jE-bBk">
-                                <rect key="frame" x="30" y="437" width="57" height="21"/>
+                                <rect key="frame" x="272" y="349" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UOg-NU-Uea">
-                                <rect key="frame" x="95" y="110" width="411" height="216"/>
+                                <rect key="frame" x="50" y="161" width="500" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="jgA-gC-ani"/>
+                                    <constraint firstAttribute="height" constant="180" id="vBE-Kv-zob"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="445283057.95751101">
                                     <!--2015-02-10 17:44:17 +0000-->
                                 </date>
                             </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="shZ-uO-613">
+                                <rect key="frame" x="304" y="94" width="142" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="142" id="xHN-8S-9lI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOt-iJ-MCT">
+                                <rect key="frame" x="154" y="94" width="142" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="142" id="0be-AB-kHv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hgk-jE-bBk" firstAttribute="centerY" secondItem="dxy-9x-lo1" secondAttribute="centerY" id="14g-T7-dqi"/>
-                            <constraint firstItem="UOg-NU-Uea" firstAttribute="leading" secondItem="hZL-pU-2vM" secondAttribute="trailing" constant="8" symbolic="YES" id="9Cx-0o-9Vz"/>
-                            <constraint firstItem="dxy-9x-lo1" firstAttribute="trailing" secondItem="UOg-NU-Uea" secondAttribute="trailing" id="CYd-VV-Tdx"/>
-                            <constraint firstItem="dxy-9x-lo1" firstAttribute="top" secondItem="UOg-NU-Uea" secondAttribute="bottom" constant="14" id="Dya-lh-7xy"/>
-                            <constraint firstItem="clB-Lp-cXh" firstAttribute="top" secondItem="dxy-9x-lo1" secondAttribute="bottom" constant="8" symbolic="YES" id="Gmw-EB-WQu"/>
-                            <constraint firstItem="UOg-NU-Uea" firstAttribute="top" secondItem="zbT-8d-e2x" secondAttribute="bottom" constant="46" id="NIW-Hj-MLC"/>
-                            <constraint firstItem="dxy-9x-lo1" firstAttribute="leading" secondItem="hgk-jE-bBk" secondAttribute="trailing" constant="8" symbolic="YES" id="QDT-qK-cav"/>
-                            <constraint firstItem="UOg-NU-Uea" firstAttribute="leading" secondItem="Cgb-PQ-Oel" secondAttribute="leadingMargin" constant="79" id="S4K-ep-6kg"/>
-                            <constraint firstItem="dxy-9x-lo1" firstAttribute="leading" secondItem="UOg-NU-Uea" secondAttribute="leading" id="VFX-Rt-2cR"/>
-                            <constraint firstItem="hZL-pU-2vM" firstAttribute="centerY" secondItem="UOg-NU-Uea" secondAttribute="centerY" id="bFz-mb-43h"/>
-                            <constraint firstItem="clB-Lp-cXh" firstAttribute="centerX" secondItem="Cgb-PQ-Oel" secondAttribute="centerX" id="nCN-nb-cHI"/>
-                            <constraint firstItem="clB-Lp-cXh" firstAttribute="bottom" secondItem="R4y-LL-Ynn" secondAttribute="top" id="oEc-j4-v5Y"/>
-                            <constraint firstItem="clB-Lp-cXh" firstAttribute="centerX" secondItem="dxy-9x-lo1" secondAttribute="centerX" id="tZX-cH-WTs"/>
+                            <constraint firstItem="clB-Lp-cXh" firstAttribute="top" secondItem="dxy-9x-lo1" secondAttribute="bottom" constant="6" id="8EV-y7-IW3"/>
+                            <constraint firstItem="AOt-iJ-MCT" firstAttribute="bottom" secondItem="shZ-uO-613" secondAttribute="bottom" id="Bss-On-E18"/>
+                            <constraint firstItem="clB-Lp-cXh" firstAttribute="centerX" secondItem="dxy-9x-lo1" secondAttribute="centerX" id="Cus-id-UF7"/>
+                            <constraint firstItem="dxy-9x-lo1" firstAttribute="top" secondItem="hgk-jE-bBk" secondAttribute="bottom" constant="8" symbolic="YES" id="NrP-uy-vxe"/>
+                            <constraint firstItem="hZL-pU-2vM" firstAttribute="centerX" secondItem="UOg-NU-Uea" secondAttribute="centerX" id="O52-NZ-ecN"/>
+                            <constraint firstItem="UOg-NU-Uea" firstAttribute="leading" secondItem="dxy-9x-lo1" secondAttribute="leading" id="QaI-Kj-fbu"/>
+                            <constraint firstItem="UOg-NU-Uea" firstAttribute="leading" secondItem="Cgb-PQ-Oel" secondAttribute="leadingMargin" constant="34" id="UZd-gW-Gaw"/>
+                            <constraint firstItem="UOg-NU-Uea" firstAttribute="top" secondItem="hZL-pU-2vM" secondAttribute="bottom" constant="8" symbolic="YES" id="W10-jX-Vya"/>
+                            <constraint firstItem="hZL-pU-2vM" firstAttribute="top" secondItem="shZ-uO-613" secondAttribute="bottom" constant="8" id="ZFj-FK-Xox"/>
+                            <constraint firstItem="hgk-jE-bBk" firstAttribute="centerX" secondItem="UOg-NU-Uea" secondAttribute="centerX" id="aRq-vA-T80"/>
+                            <constraint firstItem="shZ-uO-613" firstAttribute="top" secondItem="zbT-8d-e2x" secondAttribute="bottom" constant="30" id="cEp-D9-V41"/>
+                            <constraint firstItem="AOt-iJ-MCT" firstAttribute="top" secondItem="zbT-8d-e2x" secondAttribute="bottom" constant="30" id="cRe-VE-cZB"/>
+                            <constraint firstItem="UOg-NU-Uea" firstAttribute="trailing" secondItem="dxy-9x-lo1" secondAttribute="trailing" id="fBc-N7-cmy"/>
+                            <constraint firstAttribute="centerX" secondItem="shZ-uO-613" secondAttribute="centerX" constant="-75" id="gML-6g-4cA"/>
+                            <constraint firstItem="UOg-NU-Uea" firstAttribute="centerX" secondItem="Cgb-PQ-Oel" secondAttribute="centerX" id="mRZ-9g-2JL"/>
+                            <constraint firstItem="hgk-jE-bBk" firstAttribute="top" secondItem="UOg-NU-Uea" secondAttribute="bottom" constant="8" symbolic="YES" id="nA1-qb-eMA"/>
+                            <constraint firstItem="clB-Lp-cXh" firstAttribute="bottom" secondItem="R4y-LL-Ynn" secondAttribute="top" id="nRH-pe-boN"/>
+                            <constraint firstItem="shZ-uO-613" firstAttribute="leading" secondItem="AOt-iJ-MCT" secondAttribute="trailing" constant="8" id="x2w-A9-vLM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="endDate" destination="dxy-9x-lo1" id="JGJ-14-57I"/>
+                        <outlet property="firstName" destination="AOt-iJ-MCT" id="eN3-mv-00O"/>
+                        <outlet property="lastName" destination="shZ-uO-613" id="cQS-do-Xx6"/>
                         <outlet property="startDate" destination="UOg-NU-Uea" id="QEE-57-v3v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ary-Bi-z96" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3467" y="-264"/>
+            <point key="canvasLocation" x="3467" y="-248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g28-jo-5Sc">
