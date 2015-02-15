@@ -20,6 +20,7 @@
 
 @implementation RoomsViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
   
@@ -27,52 +28,35 @@
   self.selectedRooms = self.passedHotel.rooms.allObjects;
   self.roomsTable.dataSource = self;
   //allObjects converts to an array.
-  
-}
+}//view did load
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
   NSLog(@"%lu",(unsigned long)_selectedRooms.count);
   return self.selectedRooms.count;
-}
+}//table view rows
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"roomsCell" forIndexPath:indexPath];
+  
   Room *room = self.selectedRooms[indexPath.row];
   //%@ is wildcard
   NSString *number = [NSString stringWithFormat:@"%@", room.number];
   cell.textLabel.text = number;
   return cell;
-}
+}//table view cell
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  
   
     if ([segue.identifier isEqualToString:@"reservationsListVC"]) {
       ReservationsListViewController *destinationVC = segue.destinationViewController;
       NSIndexPath *indexPath = self.roomsTable.indexPathForSelectedRow;
       Room *room = self.selectedRooms[indexPath.row];
       destinationVC.selectedRoom = room;
-    }
-  
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+    }//if identifier
+}//prepare for segue
 @end

@@ -50,7 +50,10 @@
   //Room info
   NSFetchRequest *fetchRoomsInfo = [[NSFetchRequest alloc] initWithEntityName:@"Room"];
   NSPredicate *roomsPredicate = [NSPredicate predicateWithFormat:@"hotel.name MATCHES %@ AND NOT (self IN %@)",selectedHotel, rooms];
+  NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:true];
   fetchRoomsInfo.predicate = roomsPredicate;
+  fetchRoomsInfo.sortDescriptors = @[sortDescriptor];
+  
   NSArray *finalResults = [self.context executeFetchRequest:fetchRoomsInfo error:&fetchError];
   if (fetchError) {
     NSLog(@"%@",fetchError.localizedDescription);

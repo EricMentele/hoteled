@@ -160,8 +160,6 @@
 			children = (
 				40E31C181A8BCDA9002815AA /* CoreDataStack.h */,
 				40E31C191A8BCDA9002815AA /* CoreDataStack.m */,
-				40BFDB381A8EC22F00C21639 /* Reservation.h */,
-				40BFDB391A8EC22F00C21639 /* Reservation.m */,
 				40BCDF421A8C555700D45591 /* Hotel */,
 			);
 			name = Models;
@@ -215,6 +213,8 @@
 				40153C2C1A8926270044178D /* Hoteled.xcdatamodeld */,
 				40153C5A1A8931F30044178D /* Hotel.h */,
 				40153C5B1A8931F30044178D /* Hotel.m */,
+				40BFDB381A8EC22F00C21639 /* Reservation.h */,
+				40BFDB391A8EC22F00C21639 /* Reservation.m */,
 				40BCDF431A8C556E00D45591 /* Rooms */,
 			);
 			name = Hotel;
