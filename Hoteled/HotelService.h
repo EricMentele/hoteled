@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CoreDataStack.h"
-#import "Reservation.h" 
+#import "Reservation.h"
 #import "Room.h"
 #import "Guest.h"
 
@@ -20,5 +20,7 @@
 -(instancetype)initForTesting;
 
 -(Reservation *)bookReservationForGuest:(Guest *)guest ForRoom:(Room *)room startDate:(NSDate*)startDate endDate:(NSDate *)endDate;
+
+-(NSArray *)checkAvailability:(NSString *)hotelSelected startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
 @end

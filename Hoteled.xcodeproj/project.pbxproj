@@ -27,6 +27,8 @@
 		4063395F1A8BD60D002B8251 /* HotelServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4063395E1A8BD60D002B8251 /* HotelServiceTests.m */; };
 		40BFDB3A1A8EC22F00C21639 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFDB391A8EC22F00C21639 /* Reservation.m */; };
 		40BFDB3F1A8FD49800C21639 /* ReservationsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFDB3E1A8FD49800C21639 /* ReservationsListViewController.m */; };
+		40BFDB431A90523300C21639 /* Hash Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFDB421A90523300C21639 /* Hash Table.m */; };
+		40BFDB461A90525100C21639 /* Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFDB451A90525100C21639 /* Bucket.m */; };
 		40E31C1A1A8BCDA9002815AA /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E31C191A8BCDA9002815AA /* CoreDataStack.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,10 @@
 		40BFDB391A8EC22F00C21639 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reservation.m; path = ../Reservation.m; sourceTree = "<group>"; };
 		40BFDB3D1A8FD49800C21639 /* ReservationsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationsListViewController.h; sourceTree = "<group>"; };
 		40BFDB3E1A8FD49800C21639 /* ReservationsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationsListViewController.m; sourceTree = "<group>"; };
+		40BFDB411A90523300C21639 /* Hash Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hash Table.h"; sourceTree = "<group>"; };
+		40BFDB421A90523300C21639 /* Hash Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hash Table.m"; sourceTree = "<group>"; };
+		40BFDB441A90525100C21639 /* Bucket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket.h; sourceTree = "<group>"; };
+		40BFDB451A90525100C21639 /* Bucket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket.m; sourceTree = "<group>"; };
 		40E31C181A8BCDA9002815AA /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		40E31C191A8BCDA9002815AA /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +125,7 @@
 		40153C241A8926270044178D /* Hoteled */ = {
 			isa = PBXGroup;
 			children = (
+				40BFDB401A9051F200C21639 /* Hash Table */,
 				40153C501A8926F00044178D /* Views */,
 				40153C4F1A8926EE0044178D /* Controllers */,
 				40153C4E1A8926E90044178D /* Models */,
@@ -261,6 +268,17 @@
 			name = Availability;
 			sourceTree = "<group>";
 		};
+		40BFDB401A9051F200C21639 /* Hash Table */ = {
+			isa = PBXGroup;
+			children = (
+				40BFDB411A90523300C21639 /* Hash Table.h */,
+				40BFDB421A90523300C21639 /* Hash Table.m */,
+				40BFDB441A90525100C21639 /* Bucket.h */,
+				40BFDB451A90525100C21639 /* Bucket.m */,
+			);
+			name = "Hash Table";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40153C561A8931F30044178D /* Guest.m in Sources */,
+				40BFDB461A90525100C21639 /* Bucket.m in Sources */,
 				4063395D1A8BCFEF002B8251 /* HotelService.m in Sources */,
 				40153C2B1A8926270044178D /* AppDelegate.m in Sources */,
 				40153C6F1A8A7ACC0044178D /* AddReservationViewController.m in Sources */,
@@ -374,6 +393,7 @@
 				40153C721A8A92250044178D /* AvailabilityViewController.m in Sources */,
 				40153C621A8940410044178D /* HotelListViewController.m in Sources */,
 				40153C6C1A897B670044178D /* RoomsViewController.m in Sources */,
+				40BFDB431A90523300C21639 /* Hash Table.m in Sources */,
 				40E31C1A1A8BCDA9002815AA /* CoreDataStack.m in Sources */,
 				40BFDB3F1A8FD49800C21639 /* ReservationsListViewController.m in Sources */,
 				40BFDB3A1A8EC22F00C21639 /* Reservation.m in Sources */,

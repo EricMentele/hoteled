@@ -44,7 +44,6 @@
 }//init for testing
 
 
-#pragma mark - Booking
 -(Reservation *)bookReservationForGuest:(Guest *)guest ForRoom:(Room *)room startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
   
   Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:self.coreDataStack.managedObjectContext];
@@ -63,4 +62,40 @@
     return nil;
   }//if else save error
 }//book reservation for guest
+
+-(NSArray *)checkAvailability:(NSString *)hotelSelected startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+  //Set up fetch requests
+  //Hotel Rooms
+  NSFetchRequest *fetchHotelRooms = [[NSFetchRequest alloc]initWithEntityName:@"Room"];
+  NSString *selectedHotel = hotelSelected;
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.hotel.name MATCHES %@", selectedHotel];
+  fetchHotelRooms.predicate = predicate;
+  //Reservations
+  NSFetchRequest *fetchReservations = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
+  NSPredicate *reservationsPredicate = [NSPredicate predicateWithFormat:@"room.hotel.name MATCHES %@ AND startDate <= %@ AND endDate >= %@", selectedHotel, startDate, endDate];
+  fetchReservations.predicate = reservationsPredicate;
+  //Execution of reservations fetch
+  NSError *fetchError;
+  NSArray *results = [self.coreDataStack.managedObjectContext executeFetchRequest:fetchReservations error:&fetchError];
+  NSMutableArray *rooms = [NSMutableArray new];
+  for (Reservation *reservation in results) {
+    
+    [rooms addObject:reservation.room];
+  }//for to populate reservations
+  //Room info
+  NSFetchRequest *fetchRoomsInfo = [[NSFetchRequest alloc] initWithEntityName:@"Room"];
+  NSPredicate *roomsPredicate = [NSPredicate predicateWithFormat:@"hotel.name MATCHES %@ AND NOT (self IN %@)",selectedHotel, rooms];
+  NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:true];
+  fetchRoomsInfo.predicate = roomsPredicate;
+  fetchRoomsInfo.sortDescriptors = @[sortDescriptor];
+  
+  NSArray *finalResults = [self.coreDataStack.managedObjectContext executeFetchRequest:fetchRoomsInfo error:&fetchError];
+  if (fetchError) {
+    NSLog(@"%@",fetchError.localizedDescription);
+  }//if error
+  
+  NSLog(@"results : %lu",(unsigned long)finalResults.count);
+  return finalResults;
+}
+
 @end

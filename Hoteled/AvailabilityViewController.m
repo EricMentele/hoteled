@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *endDate;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDate;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *hotelSelector;
-@property (strong,nonatomic) NSManagedObjectContext *context;
+
 @end
 
 @implementation AvailabilityViewController
@@ -24,44 +24,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  self.context = [[HotelService sharedService]coreDataStack].managedObjectContext;
 
 }//view did load
 
 
 - (IBAction)checkButton:(id)sender {
   
-  //Set up fetch requests
-  //Hotel Rooms
-  NSFetchRequest *fetchHotelRooms = [[NSFetchRequest alloc]initWithEntityName:@"Room"];
-  NSString *selectedHotel = [self.hotelSelector titleForSegmentAtIndex:self.hotelSelector.selectedSegmentIndex];
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.hotel.name MATCHES %@", selectedHotel];
-  fetchHotelRooms.predicate = predicate;
-  //Reservations
-  NSFetchRequest *fetchReservations = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
-  NSPredicate *reservationsPredicate = [NSPredicate predicateWithFormat:@"room.hotel.name MATCHES %@ AND startDate <= %@ AND endDate >= %@", selectedHotel, self.startDate.date, self.endDate.date];
-  fetchReservations.predicate = reservationsPredicate;
-  //Execution of reservations fetch
-  NSError *fetchError;
-  NSArray *results = [self.context executeFetchRequest:fetchReservations error:&fetchError];
-  NSMutableArray *rooms = [NSMutableArray new];
-  for (Reservation *reservation in results) {
-    
-    [rooms addObject:reservation.room];
-  }//for to populate reservations
-  //Room info
-  NSFetchRequest *fetchRoomsInfo = [[NSFetchRequest alloc] initWithEntityName:@"Room"];
-  NSPredicate *roomsPredicate = [NSPredicate predicateWithFormat:@"hotel.name MATCHES %@ AND NOT (self IN %@)",selectedHotel, rooms];
-  NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:true];
-  fetchRoomsInfo.predicate = roomsPredicate;
-  fetchRoomsInfo.sortDescriptors = @[sortDescriptor];
+  NSInteger selectedHotelIndex = self.hotelSelector.selectedSegmentIndex;
+  NSString *selectedHotel = [self.hotelSelector titleForSegmentAtIndex:selectedHotelIndex];
   
-  NSArray *finalResults = [self.context executeFetchRequest:fetchRoomsInfo error:&fetchError];
-  if (fetchError) {
-    NSLog(@"%@",fetchError.localizedDescription);
-  }//if error
-  
-  NSLog(@"results : %lu",(unsigned long)finalResults.count);
+  [[HotelService sharedService] checkAvailability:selectedHotel startDate:self.startDate.date endDate:self.endDate.date];
   
   
 }//check button
