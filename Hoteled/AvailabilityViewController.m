@@ -9,6 +9,7 @@
 #import "AvailabilityViewController.h"
 #import "AppDelegate.h"
 #import "Reservation.h"
+#import "HotelService.h"
 
 @interface AvailabilityViewController ()
 
@@ -23,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  self.context = [[HotelService sharedService]coreDataStack].managedObjectContext;
 
 }//view did load
 
