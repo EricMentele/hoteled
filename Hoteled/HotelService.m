@@ -7,6 +7,7 @@
 //
 
 #import "HotelService.h"
+#import "Room.h"
 
 @implementation HotelService
 
@@ -63,6 +64,7 @@
   }//if else save error
 }//book reservation for guest
 
+
 -(NSArray *)checkAvailability:(NSString *)hotelSelected startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
   //Set up fetch requests
   //Hotel Rooms
@@ -85,13 +87,17 @@
   //Room info
   NSFetchRequest *fetchRoomsInfo = [[NSFetchRequest alloc] initWithEntityName:@"Room"];
   NSPredicate *roomsPredicate = [NSPredicate predicateWithFormat:@"hotel.name MATCHES %@ AND NOT (self IN %@)",selectedHotel, rooms];
-  NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:true];
   fetchRoomsInfo.predicate = roomsPredicate;
-  fetchRoomsInfo.sortDescriptors = @[sortDescriptor];
-  
   NSArray *finalResults = [self.coreDataStack.managedObjectContext executeFetchRequest:fetchRoomsInfo error:&fetchError];
   if (fetchError) {
+    
     NSLog(@"%@",fetchError.localizedDescription);
+    
+//      for (Room *room in finalResults) {
+//      
+//      [self.vacantRooms addObject:room];
+//    }//for room
+    
   }//if error
   
   NSLog(@"results : %lu",(unsigned long)finalResults.count);

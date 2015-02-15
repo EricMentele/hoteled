@@ -41,10 +41,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"roomsCell" forIndexPath:indexPath];
-  NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"number"
-                                                               ascending:YES];
-  NSArray *sortedRooms = [self.selectedRooms sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
-  Room *room = sortedRooms[indexPath.row];
+//  NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"number"
+//                                                               ascending:YES];
+//  NSArray *sortedRooms = [self.selectedRooms sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+  Room *room = self.selectedRooms[indexPath.row];
   //%@ is wildcard
   NSString *number = [NSString stringWithFormat:@"%@", room.number];
   cell.textLabel.text = number;

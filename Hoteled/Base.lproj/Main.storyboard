@@ -50,20 +50,6 @@
                                             <segue destination="aAL-5A-Wa5" kind="show" identifier="availablilityVC" id="KS5-Wq-R7G"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LOOKUPcell" textLabel="0JE-Y3-7R0" style="IBUITableViewCellStyleDefault" id="mK7-CJ-iNV">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mK7-CJ-iNV" id="SbH-Rf-LQr">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lookup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0JE-Y3-7R0">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -341,10 +327,10 @@
             </objects>
             <point key="canvasLocation" x="645" y="325"/>
         </scene>
-        <!--Availability View Controller-->
+        <!--Check Availability-->
         <scene sceneID="g5I-xd-eC3">
             <objects>
-                <viewController id="aAL-5A-Wa5" customClass="AvailabilityViewController" sceneMemberID="viewController">
+                <viewController title="Check Availability" id="aAL-5A-Wa5" customClass="AvailabilityViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VKG-0k-D8Z"/>
                         <viewControllerLayoutGuide type="bottom" id="IZm-wW-ne9"/>
@@ -372,6 +358,7 @@
                                 </state>
                                 <connections>
                                     <action selector="checkButton:" destination="aAL-5A-Wa5" eventType="touchUpInside" id="wup-Ng-oYq"/>
+                                    <segue destination="q2u-AH-T7a" kind="show" identifier="availabilityDetailVC" id="u8s-wL-Sot"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mJ7-vR-W4I">
@@ -398,6 +385,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x28-Sy-JBb">
                                 <rect key="frame" x="101" y="78" width="399" height="29"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="399" id="U3S-bT-or8"/>
                                     <constraint firstAttribute="height" constant="28" id="eVJ-gf-ZF3"/>
                                 </constraints>
                                 <segments>
@@ -413,6 +401,7 @@
                             <constraint firstItem="BCP-4d-Jw7" firstAttribute="centerX" secondItem="mJ7-vR-W4I" secondAttribute="centerX" id="7mD-aG-rw5"/>
                             <constraint firstAttribute="centerX" secondItem="x28-Sy-JBb" secondAttribute="centerX" id="8NR-yx-Ljc"/>
                             <constraint firstItem="mJ7-vR-W4I" firstAttribute="leading" secondItem="lqS-Hv-NKM" secondAttribute="trailing" constant="8" id="9PF-HI-Wcx"/>
+                            <constraint firstItem="hVX-rT-VHg" firstAttribute="leading" secondItem="x28-Sy-JBb" secondAttribute="leading" constant="-6" id="CkQ-vs-M9N"/>
                             <constraint firstItem="hVX-rT-VHg" firstAttribute="trailing" secondItem="mJ7-vR-W4I" secondAttribute="trailing" id="EbL-Rc-GlP"/>
                             <constraint firstItem="lqS-Hv-NKM" firstAttribute="centerY" secondItem="mJ7-vR-W4I" secondAttribute="centerY" id="Ik4-hV-mJW"/>
                             <constraint firstItem="BCP-4d-Jw7" firstAttribute="centerX" secondItem="hVX-rT-VHg" secondAttribute="centerX" id="K8U-3R-g4d"/>
@@ -430,10 +419,12 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="CkQ-vs-M9N"/>
                                 <exclude reference="sSc-g3-93h"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Availability" id="5g0-FD-YMC"/>
                     <connections>
                         <outlet property="endDate" destination="mJ7-vR-W4I" id="u25-te-f6h"/>
                         <outlet property="hotelSelector" destination="x28-Sy-JBb" id="2CH-Dw-OAw"/>
@@ -443,6 +434,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ij-Pw-wLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1344" y="1084"/>
+        </scene>
+        <!--Availability Detail-->
+        <scene sceneID="n8U-hj-MD0">
+            <objects>
+                <viewController title="Availability Detail" id="q2u-AH-T7a" customClass="AvailabilityDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FMo-Zp-Dcb"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJk-zS-W7q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TfO-CH-bnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6Da-f0-1TZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="hzE-DW-0Qi">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hzE-DW-0Qi" id="4pN-QN-CEr">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Da-f0-1TZ" secondAttribute="trailing" constant="-16" id="0Ut-y3-Y7G"/>
+                            <constraint firstItem="6Da-f0-1TZ" firstAttribute="leading" secondItem="TfO-CH-bnJ" secondAttribute="leadingMargin" constant="-16" id="9r6-tl-hVx"/>
+                            <constraint firstItem="6Da-f0-1TZ" firstAttribute="top" secondItem="TfO-CH-bnJ" secondAttribute="topMargin" id="cMq-0X-Q0T"/>
+                            <constraint firstItem="EJk-zS-W7q" firstAttribute="top" secondItem="6Da-f0-1TZ" secondAttribute="bottom" id="pbI-Kg-kO5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fbx-FG-n17"/>
+                    <connections>
+                        <outlet property="hotelName" destination="Fbx-FG-n17" id="oQz-No-eh1"/>
+                        <outlet property="tableView" destination="6Da-f0-1TZ" id="Bbh-t7-N2v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3t-ja-Jt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344" y="1819"/>
         </scene>
     </scenes>
 </document>

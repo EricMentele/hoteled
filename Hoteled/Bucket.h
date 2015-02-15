@@ -10,4 +10,7 @@
 
 @interface Bucket : NSObject
 
+@property (strong,nonatomic) Bucket *next;
+@property (strong,nonatomic) id data;
+@property (strong,nonatomic) NSString *key;
 @end

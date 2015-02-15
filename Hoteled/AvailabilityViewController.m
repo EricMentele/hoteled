@@ -10,12 +10,15 @@
 #import "AppDelegate.h"
 #import "Reservation.h"
 #import "HotelService.h"
+#import "AvailabilityDetailViewController.h"
 
 @interface AvailabilityViewController ()
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *endDate;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDate;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *hotelSelector;
+@property (strong, nonatomic) NSArray *vacantRooms;
+@property (strong, nonatomic) NSString *selectedHotel;
 
 @end
 
@@ -31,11 +34,23 @@
 - (IBAction)checkButton:(id)sender {
   
   NSInteger selectedHotelIndex = self.hotelSelector.selectedSegmentIndex;
-  NSString *selectedHotel = [self.hotelSelector titleForSegmentAtIndex:selectedHotelIndex];
+  self.selectedHotel = [self.hotelSelector titleForSegmentAtIndex:selectedHotelIndex];
+  //NSLog(@"%@",self.selectedHotel);
   
-  [[HotelService sharedService] checkAvailability:selectedHotel startDate:self.startDate.date endDate:self.endDate.date];
+  self.vacantRooms = [[HotelService sharedService] checkAvailability:self.selectedHotel startDate:self.startDate.date endDate:self.endDate.date];
   
   
 }//check button
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  if ([segue.identifier isEqualToString:@"availabilityDetailVC"]) {
+    
+    AvailabilityDetailViewController *detailVC = segue.destinationViewController;
+    detailVC.passedRooms = self.vacantRooms;
+    detailVC.passedHotel = self.selectedHotel;
+  }
+}
 
 @end

@@ -13,10 +13,10 @@ XCreate an Availability View Controller, which lets the user query for all rooms
 Wednesday==========================================================================
 
 XSeparate your core data setup into a separate CoreDataStack Class.
-Create a HotelService class that should abstract away your business logic (booking reservations, checking availability, etc)
+XCreate a HotelService class that should abstract away your business logic (booking reservations, checking availability, etc)
 XWrite unit tests for your HotelServiceMethods
-Implement a fetchedresultscontroller in your reservation list view controller.
+XImplement a fetchedresultscontroller in your reservation list view controller.
 
 Thursday==========================================================================
 
-Create an implementation of Hash Table.
+XCreate an implementation of Hash Table.

@@ -29,6 +29,7 @@
 		40BFDB3F1A8FD49800C21639 /* ReservationsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFDB3E1A8FD49800C21639 /* ReservationsListViewController.m */; };
 		40BFDB431A90523300C21639 /* Hash Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFDB421A90523300C21639 /* Hash Table.m */; };
 		40BFDB461A90525100C21639 /* Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFDB451A90525100C21639 /* Bucket.m */; };
+		40BFDB491A90876200C21639 /* AvailabilityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFDB481A90876200C21639 /* AvailabilityDetailViewController.m */; };
 		40E31C1A1A8BCDA9002815AA /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E31C191A8BCDA9002815AA /* CoreDataStack.m */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,8 @@
 		40BFDB421A90523300C21639 /* Hash Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hash Table.m"; sourceTree = "<group>"; };
 		40BFDB441A90525100C21639 /* Bucket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket.h; sourceTree = "<group>"; };
 		40BFDB451A90525100C21639 /* Bucket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket.m; sourceTree = "<group>"; };
+		40BFDB471A90876200C21639 /* AvailabilityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailabilityDetailViewController.h; sourceTree = "<group>"; };
+		40BFDB481A90876200C21639 /* AvailabilityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailabilityDetailViewController.m; sourceTree = "<group>"; };
 		40E31C181A8BCDA9002815AA /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		40E31C191A8BCDA9002815AA /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +266,8 @@
 			children = (
 				40153C701A8A92250044178D /* AvailabilityViewController.h */,
 				40153C711A8A92250044178D /* AvailabilityViewController.m */,
+				40BFDB471A90876200C21639 /* AvailabilityDetailViewController.h */,
+				40BFDB481A90876200C21639 /* AvailabilityDetailViewController.m */,
 				40BCDF411A8C54CA00D45591 /* Rooms */,
 			);
 			name = Availability;
@@ -383,6 +388,7 @@
 			files = (
 				40153C561A8931F30044178D /* Guest.m in Sources */,
 				40BFDB461A90525100C21639 /* Bucket.m in Sources */,
+				40BFDB491A90876200C21639 /* AvailabilityDetailViewController.m in Sources */,
 				4063395D1A8BCFEF002B8251 /* HotelService.m in Sources */,
 				40153C2B1A8926270044178D /* AppDelegate.m in Sources */,
 				40153C6F1A8A7ACC0044178D /* AddReservationViewController.m in Sources */,
