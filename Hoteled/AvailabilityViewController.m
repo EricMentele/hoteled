@@ -37,9 +37,8 @@
   self.selectedHotel = [self.hotelSelector titleForSegmentAtIndex:selectedHotelIndex];
   //NSLog(@"%@",self.selectedHotel);
   
-  self.vacantRooms = [[HotelService sharedService] checkAvailability:self.selectedHotel startDate:self.startDate.date endDate:self.endDate.date];
-  
-  
+  [[HotelService sharedService] checkAvailability:self.selectedHotel startDate:self.startDate.date endDate:self.endDate.date];
+  self.vacantRooms = [[HotelService sharedService] vacantRooms];
 }//check button
 
 

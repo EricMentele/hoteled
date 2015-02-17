@@ -65,7 +65,7 @@
 }//book reservation for guest
 
 
--(NSArray *)checkAvailability:(NSString *)hotelSelected startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+-(void)checkAvailability:(NSString *)hotelSelected startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
   //Set up fetch requests
   //Hotel Rooms
   NSFetchRequest *fetchHotelRooms = [[NSFetchRequest alloc]initWithEntityName:@"Room"];
@@ -85,23 +85,30 @@
     [rooms addObject:reservation.room];
   }//for to populate reservations
   //Room info
+  NSLog(@"%lu",rooms.count);
   NSFetchRequest *fetchRoomsInfo = [[NSFetchRequest alloc] initWithEntityName:@"Room"];
-  NSPredicate *roomsPredicate = [NSPredicate predicateWithFormat:@"hotel.name MATCHES %@ AND NOT (self IN %@)",selectedHotel, rooms];
+  NSPredicate *roomsPredicate = [NSPredicate predicateWithFormat:@"hotel.name MATCHES %@ AND NOT (self IN %@)",hotelSelected, rooms];
   fetchRoomsInfo.predicate = roomsPredicate;
+  NSMutableArray *roomsToUse = [[NSMutableArray alloc]init];
   NSArray *finalResults = [self.coreDataStack.managedObjectContext executeFetchRequest:fetchRoomsInfo error:&fetchError];
+ 
   if (fetchError) {
-    
     NSLog(@"%@",fetchError.localizedDescription);
-    
-//      for (Room *room in finalResults) {
-//      
-//      [self.vacantRooms addObject:room];
-//    }//for room
-    
+      for (Room *room in finalResults) {
+      [roomsToUse addObject:room];
+    }//for room
   }//if error
   
+  
+
+  
+  
+  
+  
+  
+
   NSLog(@"results : %lu",(unsigned long)finalResults.count);
-  return finalResults;
-}
+  self.vacantRooms = finalResults;
+  }
 
 @end
