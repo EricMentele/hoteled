@@ -19,60 +19,67 @@
 
 @implementation CoreDataStack
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize managedObjectContext             = _managedObjectContext;
+@synthesize managedObjectModel               = _managedObjectModel;
+@synthesize persistentStoreCoordinator       = _persistentStoreCoordinator;
+
 
 -(instancetype)initForTesting {
   
-  self = [super init];
+  self                                         = [super init];
   if (self) {
-    self.isTesting = true;
+    
+    self.isTesting                               = true;
   }//if self
   return self;
 }//init for testing
 
+
 -(instancetype)init{
-  self = [super init];
+  
+  self                                         = [super init];
   if (self){
+    
     [self dataBaseSeed];
-  }
+  }//if
   return self;
-}
+}//init
+
+
 - (void) dataBaseSeed {
   
-  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Hotel"];
+  NSFetchRequest *fetchRequest                 = [[NSFetchRequest alloc] initWithEntityName:@"Hotel"];
   NSError *fetchError;
   
-  NSInteger results = [self.managedObjectContext countForFetchRequest:fetchRequest error:&fetchError];
+  NSInteger results                            = [self.managedObjectContext countForFetchRequest:fetchRequest error:&fetchError];
   NSLog(@" %ld", (long)results);
   if (results == 0) {
-    //this is where we seed our hotel if empty.
-    NSURL *seedURL = [[NSBundle mainBundle]URLForResource:@"seed" withExtension:@"json" ];
-    NSData *seedData = [[NSData alloc] initWithContentsOfURL:seedURL];
+    
+    NSURL *seedURL                               = [[NSBundle mainBundle]URLForResource:@"seed" withExtension:@"json" ];
+    NSData *seedData                             = [[NSData alloc] initWithContentsOfURL:seedURL];
     NSError *jsonError;
-    NSDictionary *rootDictionary = [NSJSONSerialization JSONObjectWithData:seedData options:0 error:&jsonError];
+    NSDictionary *rootDictionary                 = [NSJSONSerialization JSONObjectWithData:seedData options:0 error:&jsonError];
     if (!jsonError) {
       
-      NSArray *jsonArray = rootDictionary[@"Hotels"];
+      NSArray *jsonArray                           = rootDictionary[@"Hotels"];
       NSAssert(jsonArray.count != 0, @"Hotels array is not populating!");
       
       for (NSDictionary *hotelDictionary in jsonArray) {
         
-        Hotel *hotel = [NSEntityDescription
-                        insertNewObjectForEntityForName:@"Hotel"
-                        inManagedObjectContext:self.managedObjectContext];
-        hotel.name = hotelDictionary[@"name"];
-        hotel.rating = hotelDictionary[@"stars"];
-        hotel.location = hotelDictionary[@"location"];
+        Hotel *hotel                                 = [NSEntityDescription
+                                                        insertNewObjectForEntityForName:@"Hotel"
+                                                        inManagedObjectContext:self.managedObjectContext];
+        hotel.name                                   = hotelDictionary[@"name"];
+        hotel.rating                                 = hotelDictionary[@"stars"];
+        hotel.location                               = hotelDictionary[@"location"];
         
-        NSArray *roomsArray = hotelDictionary[@"rooms"];
+        NSArray *roomsArray                          = hotelDictionary[@"rooms"];
         for (NSDictionary *roomDictionary in roomsArray) {
-          Room *room = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-          room.number = roomDictionary[@"number"];
-          room.beds = roomDictionary[@"beds"];
-          room.rate = roomDictionary[@"rate"];
-          room.hotel = hotel;
+          Room *room                                   = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+          room.number                                  = roomDictionary[@"number"];
+          room.beds                                    = roomDictionary[@"beds"];
+          room.rate                                    = roomDictionary[@"rate"];
+          room.hotel                                   = hotel;
         }//for room dictionary
       }//for hotel dictionary
       
@@ -101,8 +108,8 @@
     
     return _managedObjectModel;
   }//if mom
-  NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Hoteled" withExtension:@"momd"];
-  _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+  NSURL *modelURL                              = [[NSBundle mainBundle] URLForResource:@"Hoteled" withExtension:@"momd"];
+  _managedObjectModel                          = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
   return _managedObjectModel;
 }
 
@@ -114,27 +121,27 @@
   }
   
   
-  _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-  NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Hoteled.sqlite"];
-  NSError *error = nil;
-  NSString *failureReason = @"Saved data failure during creation or loading.";
+  _persistentStoreCoordinator                  = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+  NSURL *storeURL                              = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Hoteled.sqlite"];
+  NSError *error                               = nil;
+  NSString *failureReason                      = @"Saved data failure during creation or loading.";
   NSString *storeType;
   if (self.isTesting) {
     
-    storeType = NSInMemoryStoreType;
+    storeType                                    = NSInMemoryStoreType;
   } else {
     
-    storeType = NSSQLiteStoreType;
+    storeType                                    = NSSQLiteStoreType;
   }//if is testing
   
   
   if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
     // Report error if present.
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[NSLocalizedDescriptionKey] = @"Saved data initialization failure";
-    dict[NSLocalizedFailureReasonErrorKey] = failureReason;
-    dict[NSUnderlyingErrorKey] = error;
-    error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+    NSMutableDictionary *dict                    = [NSMutableDictionary dictionary];
+    dict[NSLocalizedDescriptionKey]              = @"Saved data initialization failure";
+    dict[NSLocalizedFailureReasonErrorKey]       = failureReason;
+    dict[NSUnderlyingErrorKey]                   = error;
+    error                                        = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
     NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     abort();
   }//if error
@@ -151,12 +158,12 @@
   }//managed object context
   
   
-  NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+  NSPersistentStoreCoordinator *coordinator    = [self persistentStoreCoordinator];
   if (!coordinator) {
     
     return nil;
   }//coordinator
-  _managedObjectContext = [[NSManagedObjectContext alloc] init];
+  _managedObjectContext                        = [[NSManagedObjectContext alloc] init];
   [_managedObjectContext setPersistentStoreCoordinator:coordinator];
   return _managedObjectContext;
 }//object context
@@ -169,7 +176,7 @@
   NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
   if (managedObjectContext != nil) {
     
-    NSError *error = nil;
+    NSError *error                               = nil;
     if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
       
       NSLog(@"Unresolved error %@, %@", error, [error userInfo]);

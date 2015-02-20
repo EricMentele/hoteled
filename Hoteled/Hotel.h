@@ -13,10 +13,10 @@
 
 @interface Hotel : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * rating;
-@property (nonatomic, retain) NSString * location;
-@property (nonatomic, retain) NSSet *rooms;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *rating;
+@property (nonatomic, retain) NSString *location;
+@property (nonatomic, retain) NSSet    *rooms;
 @end
 
 @interface Hotel (CoreDataGeneratedAccessors)

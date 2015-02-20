@@ -10,8 +10,8 @@
 #import "Room.h"
 
 @interface AvailabilityDetailViewController () <UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UINavigationItem *hotelName;
+@property (weak, nonatomic) IBOutlet UITableView           *tableView;
+@property (weak, nonatomic) IBOutlet UINavigationItem      *hotelName;
 
 @end
 
@@ -22,7 +22,7 @@
   // Do any additional setup after loading the view.
   //NSLog(@"%@",self.passedHotel);
   //NSLog(@"%lu",(unsigned long)self.passedRooms.count);
-  self.hotelName.title = self.passedHotel;
+  self.hotelName.title      = self.passedHotel;
   self.tableView.dataSource = self;
 }//view did load
 
@@ -35,13 +35,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
-//  NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES];
-//  NSArray *sortedRooms = [self.passedRooms sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
-  Room *room = self.passedRooms[indexPath.row];
+  UITableViewCell *cell     = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
+  Room *room                = self.passedRooms[indexPath.row];
   //%@ is wildcard
-  NSString *number = [NSString stringWithFormat:@"%@", room.number];
-  cell.textLabel.text = number;
+  NSString *number          = [NSString stringWithFormat:@"%@", room.number];
+  cell.textLabel.text       = number;
   return cell;
 }//cell for row
 

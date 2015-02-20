@@ -20,19 +20,19 @@
 @implementation ReservationsListViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
   
-  NSManagedObjectContext *context = [[HotelService sharedService] coreDataStack].managedObjectContext;
+  NSManagedObjectContext *context             = [[HotelService sharedService] coreDataStack].managedObjectContext;
   
-  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Reservation"];
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"room == %@", self.selectedRoom];
-  NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:true];
-  fetchRequest.predicate = predicate;
-  fetchRequest.sortDescriptors = @[sortDescriptor];
-  self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
-  self.fetchedResultsController.delegate = self;
-  self.tableView.dataSource = self;
+  NSFetchRequest *fetchRequest                = [[NSFetchRequest alloc]initWithEntityName:@"Reservation"];
+  NSPredicate *predicate                      = [NSPredicate predicateWithFormat:@"room == %@", self.selectedRoom];
+  NSSortDescriptor *sortDescriptor            = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:true];
+  fetchRequest.predicate                      = predicate;
+  fetchRequest.sortDescriptors                = @[sortDescriptor];
+  self.fetchedResultsController               = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+  self.fetchedResultsController.delegate      = self;
+  self.tableView.dataSource                   = self;
   NSError *fetchError;
   [self.fetchedResultsController performFetch:&fetchError];
   if (fetchError) {
@@ -86,7 +86,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
-  NSArray *sections = [self.fetchedResultsController sections];
+  NSArray *sections                           = [self.fetchedResultsController sections];
   id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
   return [sectionInfo numberOfObjects];
 }//number of rows
@@ -94,14 +94,14 @@
 
 -(void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath*)indexPath {
   
-  Reservation *reservation = [self.fetchedResultsController objectAtIndexPath:indexPath];
-  cell.textLabel.text = [NSString stringWithFormat:@" room:%@",reservation.room.number];
+  Reservation *reservation                    = [self.fetchedResultsController objectAtIndexPath:indexPath];
+  cell.textLabel.text                         = [NSString stringWithFormat:@" room:%@",reservation.room.number];
 }//configure cell
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reservationCell" forIndexPath:indexPath];
+  UITableViewCell *cell                       = [tableView dequeueReusableCellWithIdentifier:@"reservationCell" forIndexPath:indexPath];
   [self configureCell:cell atIndexPath:indexPath];
   return cell;
 }//cell for row
@@ -111,7 +111,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   
   AddReservationViewController *destinationVC = segue.destinationViewController;
-  destinationVC.selectedRoom = self.selectedRoom;
+  destinationVC.selectedRoom                  = self.selectedRoom;
 }//prepare for segue
 
 

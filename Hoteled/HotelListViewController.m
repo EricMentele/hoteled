@@ -13,32 +13,32 @@
 #import "HotelService.h"
 
 @interface HotelListViewController () <UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *hotelTable;
-@property (strong, nonatomic) NSArray *hotels;
+
+@property (weak, nonatomic  ) IBOutlet UITableView  *hotelTable;
+@property (strong, nonatomic) NSArray               *hotels;
 
 @end
 
 @implementation HotelListViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-  self.hotelTable.dataSource = self;
+  [super viewDidLoad];
+  self.hotelTable.dataSource   = self;
   
   
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]
                                   initWithEntityName:@"Hotel"];
-  //this is where you would create a pedicate if desired.
+  
   NSError *fetchError;
-  NSArray *results = [[[HotelService sharedService] coreDataStack].managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
+  NSArray *results             = [[[HotelService sharedService] coreDataStack].managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
   NSAssert(!fetchError, @"FETCH ERROR!");
- if (!fetchError) {
-  
-    self.hotels = results;
-    [self.hotelTable reloadData];
+  if (!fetchError) {
     
-  }
-  
-}
+    self.hotels                  = results;
+    [self.hotelTable reloadData];
+  }//if error
+}//view did load
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
@@ -48,17 +48,17 @@
   } else {
     
     return 0;
-  }
-}
+  }//if else
+}//number of rows in section
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotelCell" forIndexPath:indexPath];
-  Hotel *hotel = self.hotels[indexPath.row];
-  cell.textLabel.text = hotel.name;
+  UITableViewCell *cell        = [tableView dequeueReusableCellWithIdentifier:@"hotelCell" forIndexPath:indexPath];
+  Hotel *hotel                 = self.hotels[indexPath.row];
+  cell.textLabel.text          = hotel.name;
   return cell;
-}
+}//cell for row
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -66,13 +66,11 @@
   if ([segue.identifier isEqualToString:@"roomsVC"]) {
     
     RoomsViewController *roomsVC = (RoomsViewController *)segue.destinationViewController;
-    NSIndexPath *indexPath = self.hotelTable.indexPathForSelectedRow;
-    Hotel *hotelToPass = self.hotels[indexPath.row];
-    roomsVC.passedHotel = hotelToPass;
+    NSIndexPath *indexPath       = self.hotelTable.indexPathForSelectedRow;
+    Hotel *hotelToPass           = self.hotels[indexPath.row];
+    roomsVC.passedHotel          = hotelToPass;
     NSAssert(hotelToPass != nil, @"Hotel to pass is nil");
-  }
-}
-
-
+  }//if identifier
+}//prepare for seque
 @end
 

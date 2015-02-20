@@ -22,5 +22,5 @@
 -(Reservation *)bookReservationForGuest:(Guest *)guest ForRoom:(Room *)room startDate:(NSDate*)startDate endDate:(NSDate *)endDate;
 
 -(void)checkAvailability:(NSString *)hotelSelected startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
-@property (strong,nonatomic) NSArray *vacantRooms;
+@property (strong,nonatomic ) NSArray       *vacantRooms;
 @end
